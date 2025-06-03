@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "507308903322",
+    "project_id": "spendwise-12740",
+    "storage_bucket": "spendwise-12740.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:507308903322:android:96a2c9d684f94149a88823",
+        "android_client_info": {
+          "package_name": "com.ankit.spendwise"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8cG9CzWNHD0VM4f_5BT9a1km3lglDywQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
