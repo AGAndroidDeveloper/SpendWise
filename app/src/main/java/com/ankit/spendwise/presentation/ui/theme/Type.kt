@@ -1,4 +1,4 @@
-package com.ankit.spendwise.ui.theme
+package com.ankit.spendwise.presentation.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
