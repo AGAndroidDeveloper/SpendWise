@@ -11,6 +11,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.ankit.spendwise.presentation.screen.RegisterScreen
+import com.ankit.spendwise.presentation.screen.login.LoginScreen
+import com.ankit.spendwise.presentation.screen.onboardingscreen.OnBoardingScreen
 import com.ankit.spendwise.presentation.ui.theme.SpendWiseTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,14 +22,16 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             SpendWiseTheme(dynamicColor = false) {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+//                OnBoardingScreen(onGetStarted = {}) {
+//
+//                }
+
+              //  LoginScreen()
+                RegisterScreen(){
+
                 }
             }
-            
+
         }
     }
 }
