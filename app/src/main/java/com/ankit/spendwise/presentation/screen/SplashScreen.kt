@@ -22,7 +22,7 @@ import com.ankit.spendwise.R
 import com.ankit.spendwise.presentation.ui.theme.SpendWiseTheme
 
 @Composable
-fun SplashScreen() {
+fun SplashScreen(onSplashFinish :() -> Unit) {
     Box(contentAlignment = Alignment.Center) {
         Text(
             text = stringResource(R.string.app_name), modifier = Modifier.padding(16.dp),
@@ -38,7 +38,7 @@ fun SplashScreen() {
 fun SplashScreenPreview() {
     SpendWiseTheme(dynamicColor = false) {
         Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.primary) {
-            SplashScreen()
+            SplashScreen(){}
         }
     }
 }
@@ -48,7 +48,7 @@ fun SplashScreenPreview() {
 fun SplashScreenPreviewNight() {
     SpendWiseTheme(dynamicColor = false) {
         Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.primary) {
-            SplashScreen()
+            SplashScreen(){}
         }
 
     }
