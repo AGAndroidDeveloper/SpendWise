@@ -17,7 +17,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.UiMode
 import androidx.compose.ui.unit.dp
-import com.ankit.spendwise.Greeting
 import com.ankit.spendwise.R
 import com.ankit.spendwise.presentation.ui.theme.SpendWiseTheme
 

@@ -43,9 +43,10 @@ import com.ankit.spendwise.presentation.ui.theme.SpendWiseTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginScreen() {
+fun LoginScreen(onLoginClick: () -> Unit) {
     val email = rememberSaveable { mutableStateOf("") }
     val passWord = rememberSaveable { mutableStateOf("") }
+
 
     Scaffold(
         topBar = {
@@ -132,7 +133,7 @@ fun LoginScreen() {
                             .height(20.dp)
                     )
 
-                    Button(onClick = {}, modifier = Modifier.fillMaxWidth()) {
+                    Button(onClick = {onLoginClick.invoke()}, modifier = Modifier.fillMaxWidth()) {
                         Text(text = "Login")
                     }
                 }
@@ -191,7 +192,7 @@ fun LoginScreen() {
 fun LoginScreenPre() {
     SpendWiseTheme(dynamicColor = false) {
         Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-            LoginScreen()
+            LoginScreen(){}
         }
     }
 }

@@ -5,16 +5,17 @@ import androidx.compose.animation.core.spring
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.togetherWith
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
+import androidx.navigation3.runtime.NavBackStack
 import androidx.navigation3.runtime.NavEntry
 import androidx.navigation3.runtime.NavKey
-import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
+import com.ankit.spendwise.presentation.ProfileScreen
 import com.ankit.spendwise.presentation.screen.RegisterScreen
 import com.ankit.spendwise.presentation.screen.SplashScreen
-import com.ankit.spendwise.presentation.screen.home.HomeScreen
 import com.ankit.spendwise.presentation.screen.login.LoginScreen
 import com.ankit.spendwise.presentation.screen.onboardingscreen.OnBoardingScreen
 import kotlinx.serialization.Serializable
@@ -35,10 +36,18 @@ data object OnBoarding : NavKey
 @Serializable
 data object Home : NavKey
 
+@Serializable
+data object Statics : NavKey
+
+@Serializable
+data object Wallet : NavKey
+
+@Serializable
+data object Profile : NavKey
+
 @Composable
-fun SpendWiseNavDisplay() {
+fun SpendWiseNavDisplay(modifier: Modifier, backStack: NavBackStack) {
     //  val backStack = remember { mutableStateListOf<Any>(OnBoarding) }
-    val backStack = rememberNavBackStack(OnBoarding)
 
     NavDisplay(
         backStack = backStack,
@@ -77,9 +86,11 @@ fun SpendWiseNavDisplay() {
 
                 is Login -> {
                     NavEntry(key) {
-                        LoginScreen()
+                        LoginScreen(){
+                            backStack.add(Home)
+                           // backStack.clear()
+                        }
                     }
-
                 }
 
                 is Signup -> {
@@ -100,7 +111,41 @@ fun SpendWiseNavDisplay() {
 
                 is Home -> {
                     NavEntry(key) {
-                        HomeScreen()
+//                        when(screenState.intValue){
+//                            0 -> {
+//                                backStack.add(Home)
+//                            }
+//                            1 -> {
+//                                backStack.add(Statics)
+//                            }
+//                            2 -> {
+//                                backStack.add(Wallet)
+//                            }
+//                            3 -> {
+//                                backStack.add(Profile)
+//                            }
+//                        }
+//                        HomeScreen(screens = BottomNavItems, screenState = screenState)
+                    }
+                }
+
+                is Statics -> {
+                    NavEntry(key) {
+                        //SplashScreen()
+                    }
+                }
+
+                is Wallet -> {
+                    NavEntry(key) {
+                        //SplashScreen()
+                        Text(text = "Wallet", modifier = Modifier.fillMaxSize())
+                    }
+                }
+
+                is Profile -> {
+                    NavEntry(key) {
+                        //SplashScreen()
+                        ProfileScreen(modifier = Modifier.fillMaxSize())
                     }
                 }
 
